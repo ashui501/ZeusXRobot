@@ -95,21 +95,20 @@ STICKERS = (
 buttons = [
     [
         InlineKeyboardButton(
-                            text="☑️ SUBMIT GOD ZEUS ☑️",
+                            text="☑️ SUBMIT ZEUS'X ☑️",
                             url="t.me/ZeusXRobot?startgroup=true"),
                     ],
                    [
-                       InlineKeyboardButton(text="💓Source", url="https://github.com/Ctzfamily/ZeusXRobot"),
                        InlineKeyboardButton(text="📊 Network", url="https://t.me/PegasusBots"),
-                       InlineKeyboardButton(text="🔔 Logs", url="https://t.me/ZeusXRobotlogs"),
+                       InlineKeyboardButton(text="💓Source", url="https://github.com/Ctzfamily/ZeusXRobot"),
                      ],
                     [                  
                        InlineKeyboardButton(
-                             text="👫 Freedom",
-                             url=f"https://t.me/UnitedSupport"),
+                             text="👥 Support",
+                             url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
                              text="⚡ ZeusUpdates",
-                             url=f"https://t.me/Zeusupdates"),
+                             url=f"https://t.me/{UPDATES_CHANNEL}"),
                      ],
                     [
                     InlineKeyboardButton(text="🔐 Open commads 🔐", callback_data="help_back"
@@ -133,7 +132,7 @@ List of all the Modules:
 )
 
 HELP_MSG = "Click the button below to get help manu in your pm."
-DONATE_STRING = """t.me/unitedsupport"""
+DONATE_STRING = """I free for EveryOne Use Me And Submit A Groups"""
 HELP_IMG= "https://telegra.ph/file/5f296f959250d7cd88b09.jpg"
 
 
@@ -336,12 +335,12 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*Powered By @PegasusXteam*\n *Module Name:*`{}`\n".format(
+                "*Powered By @PegasusBots*\n *Module Name:*`{}`\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
             )
-            query.message.edit_text(
+            query.message.edit_caption(
                 text=text,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
@@ -353,7 +352,7 @@ def help_button(update, context):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.edit_text(
+            query.message.edit_caption(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -363,7 +362,7 @@ def help_button(update, context):
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.edit_text(
+            query.message.edit_caption(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -372,7 +371,7 @@ def help_button(update, context):
             )
 
         elif back_match:
-            query.message.edit_text(
+            query.message.edit_caption(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -392,7 +391,7 @@ def help_button(update, context):
 def zeus_data_callback(update, context):
     query = update.callback_query
     if query.data == "zeus_":
-        query.message.edit_text(
+        query.message.edit_caption(
             text="""CallBackQueriesData Here""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -415,9 +414,10 @@ def zeus_data_callback(update, context):
     
     
     elif query.data == "zeus_info":
-        botuptime = get_readable_time((time.time() - StartTime))
-        query.message.edit_text(
-            text="*🤖 BOT* : `Alive`\n*⚡ UPTIME* : `{}`\n*💫 PYTHON* : `{}`\n🌠 PTB* : `{}`\n*🙄REPO* : `Private`\n".format(botuptime,python_version,ptbver),parse_mode=ParseMode.MARKDOWN,
+          botuptime = get_readable_time((time.time() - StartTime))
+          query.message.edit_caption(
+            """*🤖 BOT* : `Alive`\n*⚡UPTIME* : `{}`\n*💫 PYTHON* : `{}`\n🌠 PTB* : `{}`\n*🙄REPO* : `Private`\n".format(botuptime,python_version,ptbver)
+            ,parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
