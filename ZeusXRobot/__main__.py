@@ -100,7 +100,7 @@ buttons = [
                     ],
                    [
                        InlineKeyboardButton(text="📊 Network", url="https://t.me/PegasusBots"),
-                       InlineKeyboardButton(text="💓Source", url="https://github.com/Ctzfamily/ZeusXRobot"),
+                       InlineKeyboardButton(text="📓 About", callback_data="zeus_info"),
                      ],
                     [                  
                        InlineKeyboardButton(
@@ -416,15 +416,15 @@ def zeus_data_callback(update, context):
     elif query.data == "zeus_info":
           botuptime = get_readable_time((time.time() - StartTime))
           query.message.edit_caption(
-            """*🤖 BOT* : `Alive`\n*⚡UPTIME* : `{}`\n*💫 PYTHON* : `{}`\n🌠 PTB* : `{}`\n*🙄REPO* : `Private`\n".format(botuptime,python_version,ptbver)
-            ,parse_mode=ParseMode.MARKDOWN,
+            """*Bellow you can check my inline/Repo*""",
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
                     InlineKeyboardButton(text="🔄 Go Inline 🔄", switch_inline_query_current_chat=""),
                  ],
                   [
-                    InlineKeyboardButton(text="📢 Updates", url="t.me/PegasusUpdates"),
+                    InlineKeyboardButton(text="🎉 Repo", url="http://github/ctzfamily/zeusxrobot"),
+                    InlineKeyboardButton(text="📊 Network", url="t.me/Pegasus_Network"),
                  ],
                  [
                     InlineKeyboardButton(text="⬅ Back", callback_data="zeus_back"),
