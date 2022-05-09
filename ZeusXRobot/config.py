@@ -15,8 +15,8 @@ class Config(object):
     # REQUIRED
     #Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 1234567  # integer value, dont use ""
-    API_HASH = ""
+    API_ID = 7126006  # integer value, dont use ""
+    API_HASH = "f92b05be529835381859ead64a195fa2"
     TOKEN = "2116046406:AAHMDwkBKmiIdcBWIoizJ-urG9x_7hg1F0A"  #This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 1491497760  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "ctzfamily"
